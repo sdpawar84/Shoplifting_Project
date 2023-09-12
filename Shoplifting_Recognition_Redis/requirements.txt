@@ -1,0 +1,11 @@
+opencv-python
+numpy
+matplotlib
+scikit-learn
+tensorflow
+pydot
+pydotplus
+graphviz
+redis
+boto3
+requests
