@@ -54,7 +54,7 @@ def record(camid, json_detect):
 
     # Initialize variables for ActionPredictor
     frame_list = []
-    predictor = ActionPredictor()
+    predictor = ActionPredictor(gpu_memory_limit=gpu_memory_limit)
 
     # Read the video frame by frame
     while True:
