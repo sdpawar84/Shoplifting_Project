@@ -1,12 +1,15 @@
 import numpy as np
 import tensorflow as tf
 from config import *
+import os
+
+# Set the 'TF_GPU_ALLOCATOR' environment variable to 'cuda_malloc_async'
+os.environ['TF_GPU_ALLOCATOR'] = 'cuda_malloc_async'
 
 class ActionPredictor():
     # def __init__(self):
     #     # Load the TensorRT-optimized model instead of the standard TensorFlow model
     #     self.model = self.load_trt_model()
-
     def __init__(self, gpu_memory_limit=None):
         # Set GPU memory growth to limit GPU usage
         if gpu_memory_limit is not None:
