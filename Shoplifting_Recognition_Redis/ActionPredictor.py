@@ -6,7 +6,6 @@ import os
 # Set the 'TF_GPU_ALLOCATOR' environment variable to 'cuda_malloc_async'
 os.environ['TF_GPU_ALLOCATOR'] = 'cuda_malloc_async'
 
-
 class ActionPredictor():
     # def __init__(self):
     #     # Load the TensorRT-optimized model instead of the standard TensorFlow model
@@ -28,7 +27,7 @@ class ActionPredictor():
 
     def load_trt_model(self):
         # Load the TensorRT-optimized model using the TF-TRT converter
-        trt_model_path = "/mnt/TRT_output/"  # Path to the TensorRT-optimized model saved earlier
+        trt_model_path = model_path  # Path to the TensorRT-optimized model saved earlier
         return tf.saved_model.load(trt_model_path, tags=[tf.saved_model.SERVING])
 
     def getPredictedLabel(self, frames_list):
@@ -50,3 +49,9 @@ class ActionPredictor():
         print(f"Predicted Probabilities: {predicted_probabilities}")
 
         return predicted_class_name
+
+
+
+
+
+
